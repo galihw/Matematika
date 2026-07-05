@@ -269,12 +269,13 @@
 			else			teks+=(lafal[ar[0]]+" ratus ");
 			//puluh ribuan dan satuan ribuan
 			if(ar[1]==0){
-				teks+=lafal[ar[2]]+" ";
+				teks+=lafal[ar[2]]+" ribu ";
 			}else if(ar[1]==1){
 				if(ar[2]==0)	teks+="sepuluh ribu ";
 				else 			teks+=lafal[ar[2]]+" belas ribu ";
 			}else{
-				teks+=(lafal[ar[1]]+" puluh "+lafal[ar[2]]+" ribu ");
+				if(ar[2]==0)	teks+=(lafal[ar[1]]+" puluh ribu ");
+				else 			teks+=(lafal[ar[1]]+" puluh "+lafal[ar[2]]+" ribu ");
 			}
 			
 			// ratus
@@ -288,7 +289,8 @@
 				if(ar[5]==0)	teks+="sepuluh";
 				else 			teks+=lafal[ar[5]]+" belas";
 			}else{
-				teks+=(lafal[ar[4]]+" puluh "+lafal[ar[5]]+"");
+				if(ar[5]==0)	teks+=(lafal[ar[4]]+" puluh");
+				else 			teks+=(lafal[ar[4]]+" puluh "+lafal[ar[5]]);
 			}
 			
 			return teks;

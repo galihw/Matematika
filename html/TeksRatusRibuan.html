@@ -269,12 +269,13 @@
 			else			teks+=(lafal[ar[0]]+" ratus ");
 			//puluh ribuan dan satuan ribuan
 			if(ar[1]==0){
-				teks+=lafal[ar[2]]+" ";
+				teks+=lafal[ar[2]]+" ribu ";
 			}else if(ar[1]==1){
 				if(ar[2]==0)	teks+="sepuluh ribu ";
 				else 			teks+=lafal[ar[2]]+" belas ribu ";
 			}else{
-				teks+=(lafal[ar[1]]+" puluh "+lafal[ar[2]]+" ribu ");
+				if(ar[2]==0)	teks+=(lafal[ar[1]]+" puluh ribu ");
+				else 			teks+=(lafal[ar[1]]+" puluh "+lafal[ar[2]]+" ribu ");
 			}
 			
 			// ratus
@@ -288,7 +289,8 @@
 				if(ar[5]==0)	teks+="sepuluh";
 				else 			teks+=lafal[ar[5]]+" belas";
 			}else{
-				teks+=(lafal[ar[4]]+" puluh "+lafal[ar[5]]+"");
+				if(ar[5]==0)	teks+=(lafal[ar[4]]+" puluh");
+				else 			teks+=(lafal[ar[4]]+" puluh "+lafal[ar[5]]);
 			}
 			
 			return teks;
@@ -330,48 +332,48 @@
 			}else{
 				btncek.style.display = "none";
 			}
-			function klikCek(){
-				var ff = textboxkecil.innerHTML==event.target.innerHTML;
-				btncek.style.display = "none";
-				if(ff){
-					//console.log("benar");
-					textbox.contentEditable = false;
-					benar.style.display = "";
-					benar.classList.add("fade");
-					benar.addEventListener('animationend', () => {
-						//console.log('Animasi CSS telah selesai!');
-						benar.classList.remove("fade");
-						benar.style.display = "none";
-						//btncek.style.display = "none";
-						btnsoallain.style.display = "";
-						btnsoallain.addEventListener('click', function() {
-						   location.href = "../html/TeksRatusRibuan.html";
-						});
+		});
+		function klikCek(){
+			var ff = textboxkecil.innerHTML==textbox.innerHTML;
+			btncek.style.display = "none";
+			if(ff){
+				//console.log("benar");
+				textbox.contentEditable = false;
+				benar.style.display = "";
+				benar.classList.add("fade");
+				benar.addEventListener('animationend', () => {
+					//console.log('Animasi CSS telah selesai!');
+					benar.classList.remove("fade");
+					benar.style.display = "none";
+					//btncek.style.display = "none";
+					btnsoallain.style.display = "";
+					btnsoallain.addEventListener('click', function() {
+					   location.href = "../html/TeksRatusRibuan.html";
 					});
-				}else{
-					ctsalah++;
-					ctsalah = Math.min(ctsalah,3);
-					if(ctsalah==3){
-						textbox.contentEditable = false;
-						textboxkecil.style.display = "";
-						btnsoallain.style.display = "";
-						btnsoallain.addEventListener('click', function() {
-						   location.href = "../html/TeksRatusRibuan.html";
-						});
-					}
-					//console.log("salah");
-					salah.style.display = "";
-					salah.classList.add("fade");
-					salah.addEventListener('animationend', () => {
-						//console.log('Animasi CSS telah selesai!');
-						salah.classList.remove("fade");
-						salah.style.display = "none";
+				});
+			}else{
+				ctsalah++;
+				ctsalah = Math.min(ctsalah,3);
+				if(ctsalah==3){
+					textbox.contentEditable = false;
+					textboxkecil.style.display = "";
+					btnsoallain.style.display = "";
+					btnsoallain.addEventListener('click', function() {
+					   location.href = "../html/TeksRatusRibuan.html";
 					});
 				}
+				//console.log("salah");
+				salah.style.display = "";
+				salah.classList.add("fade");
+				salah.addEventListener('animationend', () => {
+					//console.log('Animasi CSS telah selesai!');
+					salah.classList.remove("fade");
+					salah.style.display = "none";
+				});
 			}
-			var ctsalah = 0;
-			btncek.addEventListener('click', klikCek);
-		});
+		}
+		var ctsalah = 0;
+		btncek.addEventListener('click', klikCek);
 	</script>
 	<script>
 		var fixzoom = 100;
