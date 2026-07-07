@@ -125,14 +125,16 @@
 		</div>
 		<div class="mcnull" id="p01" style="background-image:url('../img/p02a.png');width:120px; height:45px; transform:translate(-50%, -50%);"></div>
 		<div class="mcnull" id="p02" style="background-image:url('../img/p02b.png');width:180px; height:45px; transform:translate(-50%, -50%);"></div>
-		<div class="mcnull" id="v0" style="background-image:url('../img/v0.png');width:3px; height:140px; transform:translate(-50%, -50%);"></div>
-		<div class="mcnull" id="v1" style="background-image:url('../img/v1.png');width:3px; height:182px; transform:translate(-50%, -50%);"></div>
-		<div class="mcnull" id="v2" style="background-image:url('../img/v2.png');width:3px; height:195px; transform:translate(-50%, -50%);"></div>
+		<div class="mcnull" id="p03" style="background-image:url('../img/p02c.png');width:312.5px; height:45px; transform:translate(-50%, -50%);"></div>
+		<div class="mcnull" id="v0" style="background-image:url('../img/v0.png');width:3px; height:135px; transform:translate(-50%, -50%);"></div>
+		<div class="mcnull" id="v1" style="background-image:url('../img/v1.png');width:3px; height:185px; transform:translate(-50%, -50%);"></div>
+		<div class="mcnull" id="v2" style="background-image:url('../img/v2.png');width:3px; height:235px; transform:translate(-50%, -50%);"></div>
 		<div class="mcnull" id="h01" style="background-image:url('../img/h02a.png');width:80px; height:40px; transform:translate(-50%, -50%);"></div>
 		<div class="mcnull" id="h02" style="background-image:url('../img/h02b.png');width:80px; height:40px; transform:translate(-50%, -50%);"></div>
 		<div class="mcnull" id="h03" style="background-image:url('../img/h02c.png');width:80px; height:40px; transform:translate(-50%, -50%);"></div>
 		<div class="mcnull" id="h04" style="background-image:url('../img/h02d.png');width:80px; height:40px; transform:translate(-50%, -50%);"></div>
 		<div class="mcnull" id="h05" style="background-image:url('../img/h02e.png');width:80px; height:40px; transform:translate(-50%, -50%);"></div>
+		<div class="mcnull" id="h06" style="background-image:url('../img/h02f.png');width:80px; height:40px; transform:translate(-50%, -50%);"></div>
 		<div class="btn" id="btnmulai"></div>
 		<div class="tutup fadeout" id="tutup"></div>
 	</div>
@@ -163,11 +165,13 @@
 		const v2 = document.getElementById("v2");
 		const p01 = document.getElementById("p01");
 		const p02 = document.getElementById("p02");
+		const p03 = document.getElementById("p03");
 		const h01 = document.getElementById("h01");
 		const h02 = document.getElementById("h02");
 		const h03 = document.getElementById("h03");
 		const h04 = document.getElementById("h04");
 		const h05 = document.getElementById("h05");
+		const h06 = document.getElementById("h06");
 		myBG.style.backgroundImage = "url(../img/bg0.png)";
 		btnmulai.style.backgroundImage = "url(../img/btnmulai.png)";
 		let lebarJendela = window.innerWidth;
@@ -184,7 +188,7 @@
 		var arorang = [];
 		var arorangbalik = [];
 		for(var i=0;i<=12;i++){
-			xytitik[i] = [60+(60*i),320];
+			xytitik[i] = [60+(60*i),380];
 			artitik[i] = document.createElement('div');
 			artitik[i].classList.add('titik');
 			artitik[i].id = "t"+i+"";
@@ -216,22 +220,24 @@
 		}
 		mcorang.x = 60+(60*6);
 		mcorang.style.left = ''+mcorang.x+'px';
-		mcorang.style.top = ''+262.5+'px';
+		mcorang.style.top = ''+322.5+'px';
 		mcorangbalik.x = 60+(60*6);
 		mcorangbalik.style.left = ''+mcorangbalik.x+'px';
-		mcorangbalik.style.top = ''+262.5+'px';
+		mcorangbalik.style.top = ''+322.5+'px';
 		btnmulai.style.left = ''+420+'px';
 		btnmulai.style.top = ''+170+'px';
 		v0.style.left = ''+420+'px';
-		v0.style.top = ''+241.25+'px';
+		v0.style.top = ''+304.5+'px';
 		v1.style.left = ''+540+'px';
-		v1.style.top = ''+221.25+'px';
+		v1.style.top = ''+280+'px';
 		v2.style.left = ''+720+'px';
-		v2.style.top = ''+213.75+'px';
+		v2.style.top = ''+255+'px';
 		p01.style.left = ''+480+'px';
-		p01.style.top = ''+177.5+'px';
+		p01.style.top = ''+237.5+'px';
 		p02.style.left = ''+630+'px';
-		p02.style.top = ''+137.5+'px';
+		p02.style.top = ''+187.5+'px';
+		p03.style.left = ''+563.75+'px';
+		p03.style.top = ''+137.5+'px';
 		h01.style.left = ''+238.5+'px';
 		h01.style.top = ''+55+'px';
 		h02.style.left = ''+329.2+'px';
@@ -242,16 +248,20 @@
 		h04.style.top = ''+55+'px';
 		h05.style.left = ''+601.6+'px';
 		h05.style.top = ''+55+'px';
+		h06.style.left = ''+601.6+'px';
+		h06.style.top = ''+55+'px';
 		v0.style.opacity = '0';
 		v1.style.opacity = '0';
 		v2.style.opacity = '0';
 		p01.style.opacity = '0';
 		p02.style.opacity = '0';
-		h01.style.opacity = '0';
-		h02.style.opacity = '0';
-		h03.style.opacity = '0';
-		h04.style.opacity = '0';
+		p03.style.opacity = '0';
+		//h01.style.opacity = '0';
+		//h02.style.opacity = '0';
+		//h03.style.opacity = '0';
+		//h04.style.opacity = '0';
 		h05.style.opacity = '0';
+		//h06.style.opacity = '0';
 		
 	</script>
 	<script>
@@ -379,12 +389,14 @@
 			const duration = 200; // Durasi 0.5 detik dalam milidetik
 			requestAnimationFrame(animate);
 		}
-		function mcAnimateAlpha(str){
+		function mcAnimateAlpha(str,tf){
 			function animate(timestamp) {
 				if (!startTime) startTime = timestamp;
 				const elapsed = timestamp - startTime;
 				var sdt = Math.min(elapsed / duration * 90 , 90);
-				const progress = Math.sin(sdt*Math.PI/180);
+				var progress
+				if(tf)	progress = Math.sin(sdt*Math.PI/180);
+				else 	progress = 1-Math.sin(sdt*Math.PI/180);
 				
 				mc.style.opacity = ''+progress+'';
 				if (elapsed < duration) {
@@ -409,31 +421,38 @@
 			btnmulai.removeEventListener('click', Klik);
 		}
 		function Remote(){
-			step++;
+			step++;/*
 			if(step==1){
-				mcAnimateAlpha('v0');
+				mcAnimateAlpha('h01',true);
+			}else if(step==2){
+				mcAnimateAlpha('h02',true);
+			}else if(step==3){
+				mcAnimateAlpha('h03',true);
+			}else if(step==4){
+				mcAnimateAlpha('h04',true);
+			}else if(step==5){
+				mcAnimateAlpha('h06',true);
+			}else if(step==6){*/
+			if(step==1){
+				mcAnimateAlpha('v0',true);
 			}else if(step==2){
 				mcAnimateOrang(0,2,["t7","t8"]);
 			}else if(step==3){
-				mcAnimateAlpha('p01');
+				mcAnimateAlpha('p01',true);
 			}else if(step==4){
-				mcAnimateAlpha('v1');
+				mcAnimateAlpha('v1',true);
 			}else if(step==5){
-				mcAnimateAlpha('h01');
-			}else if(step==6){
 				mcAnimateOrang(2,5,["t9","t10","t11"]);
+			}else if(step==6){
+				mcAnimateAlpha('p02',true);
 			}else if(step==7){
-				mcAnimateAlpha('p02');
+				mcAnimateAlpha('v2',true);
 			}else if(step==8){
-				mcAnimateAlpha('v2');
+				mcAnimateAlpha('p03',true);
 			}else if(step==9){
-				mcAnimateAlpha('h02');
+				mcAnimateAlpha('h06',false);
 			}else if(step==10){
-				mcAnimateAlpha('h03');
-			}else if(step==11){
-				mcAnimateAlpha('h04');
-			}else if(step==12){
-				mcAnimateAlpha('h05');
+				mcAnimateAlpha('h05',true);
 			}
 		}
 		btnmulai.addEventListener('click', Klik);

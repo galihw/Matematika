@@ -123,9 +123,9 @@
 			<div class="orang" id="orangbalik3"></div>
 			<div class="orang" id="orangbalik4"></div>
 		</div>
-		<div class="mcnull" id="p01" style="background-image:url('../img/p01.png');width:240px; height:45px; transform:translate(-50%, -50%);"></div>
-		<div class="mcnull" id="v0" style="background-image:url('../img/v0.png');width:3px; height:140px; transform:translate(-50%, -50%);"></div>
-		<div class="mcnull" id="v1" style="background-image:url('../img/v1.png');width:3px; height:182px; transform:translate(-50%, -50%);"></div>
+		<div class="mcnull" id="p01" style="background-image:url('../img/p01.png');width:252.5px; height:45px; transform:translate(-50%, -50%);"></div>
+		<div class="mcnull" id="v0" style="background-image:url('../img/v0.png');width:3px; height:145px; transform:translate(-50%, -50%);"></div>
+		<div class="mcnull" id="v1" style="background-image:url('../img/v0.png');width:3px; height:145px; transform:translate(-50%, -50%);"></div>
 		<div class="mcnull" id="h01" style="background-image:url('../img/h01.png');width:80px; height:40px; transform:translate(-50%, -50%);"></div>
 		<div class="btn" id="btnmulai"></div>
 		<div class="tutup fadeout" id="tutup"></div>
@@ -172,7 +172,7 @@
 		var arorang = [];
 		var arorangbalik = [];
 		for(var i=0;i<=12;i++){
-			xytitik[i] = [60+(60*i),320];
+			xytitik[i] = [60+(60*i),380];
 			artitik[i] = document.createElement('div');
 			artitik[i].classList.add('titik');
 			artitik[i].id = "t"+i+"";
@@ -204,20 +204,20 @@
 		}
 		mcorang.x = 60+(60*6);
 		mcorang.style.left = ''+mcorang.x+'px';
-		mcorang.style.top = ''+262.5+'px';
+		mcorang.style.top = ''+322.5+'px';
 		mcorangbalik.x = 60+(60*6);
 		mcorangbalik.style.left = ''+mcorangbalik.x+'px';
-		mcorangbalik.style.top = ''+262.5+'px';
+		mcorangbalik.style.top = ''+322.5+'px';
 		btnmulai.style.left = ''+420+'px';
 		btnmulai.style.top = ''+170+'px';
 		v0.style.left = ''+420+'px';
-		v0.style.top = ''+241.25+'px';
+		v0.style.top = ''+300+'px';
 		v1.style.left = ''+180+'px';
-		v1.style.top = ''+221.25+'px';
-		p01.style.left = ''+300+'px';
-		p01.style.top = ''+177.5+'px';
-		h01.style.left = ''+180+'px';
-		h01.style.top = ''+102.5+'px';
+		v1.style.top = ''+300+'px';
+		p01.style.left = ''+306.25+'px';
+		p01.style.top = ''+227.5+'px';
+		h01.style.left = ''+300+'px';
+		h01.style.top = ''+182.5+'px';
 		v0.style.opacity = '0';
 		v1.style.opacity = '0';
 		p01.style.opacity = '0';
